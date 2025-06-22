@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-school-table
+      author: Daniil
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_school
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: edrpou
+                  type: VARCHAR(255)
+              - column:
+                  name: region
+                  type: VARCHAR(255)
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+            tableName: school
+        - addUniqueConstraint:
+            columnNames: edrpou
+            constraintName: uc_school_edrpou
+            tableName: school
+
