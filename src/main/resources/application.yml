@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://awsaurora16-instance-1.ctg8u4ia637r.eu-north-1.rds.amazonaws.com:5432/school_registry
-    username: postgres
-    password: Polimorftitanoop123+**
+    url: {Url}
+    username: {Username}
+    password: {Password}
     driver-class-name: org.postgresql.Driver
   application:
       name: brdo-company
@@ -24,7 +24,3 @@ springdoc:
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
-
-server:
-  port: 8087
-
